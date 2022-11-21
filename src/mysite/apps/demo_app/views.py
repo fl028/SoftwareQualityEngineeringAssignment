@@ -8,7 +8,12 @@ from .forms import NameForm
 
 class IndexView(generic.ListView):
     template_name = 'index.html'
-    context_object_name = 'latest_question_list'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['no_questions'] = "No questions!"
+        context['latest_question_list'] = Question.objects.all()
+        return context
 
     def get_queryset(self):
         """Return the last five published questions."""

@@ -9,9 +9,9 @@
         <li><a href="{% url 'apps.demo_app:detail' question.id %}">{{ question.question_text}}</a></li>
     {% endfor %}
     </ul>
-{% else %}
-    <p>{{ text | safe}}</p>
-{% endif %}
+    {% else %}
+        <p>{{ no_questions | safe }}</p>
+    {% endif %}
 </div>
 {% endblock %}
 

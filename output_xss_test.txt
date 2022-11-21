@@ -1,0 +1,25 @@
+(_venv) .\SoftwareQualityEngineeringAssignment>python -m pytest tests/ --driver Chrome --driver-path .\chromedriver.exe -rs -vv
+=============================================================== test session starts ===============================================================
+platform win32 -- Python 3.7.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- .\SoftwareQualityEngineeringAssignment\_venv\Scripts\python.exe
+cachedir: .pytest_cache
+django: settings: mysite.settings (from ini)
+metadata: {...}
+driver: Chrome
+sensitiveurl: .*
+rootdir: .\SoftwareQualityEngineeringAssignment, configfile: pytest.ini
+plugins: django-xss-fuzzer-0.3.1, base-url-2.0.0, django-4.5.2, html-3.2.0, metadata-2.0.4, pythonpath-0.7.4, selenium-4.0.0, variables-2.0.0
+collected 9 items
+
+tests/test_gui.py::test_xss_patterns[Script tag with onerror event-/]                       FAILED           [ 11%]
+tests/test_gui.py::test_xss_patterns[non-quoted attribute escape-/]                         FAILED           [ 22%]
+tests/test_gui.py::test_xss_patterns[non-quoted attribute escape with backticks-/]          FAILED           [ 33%]
+tests/test_gui.py::test_xss_patterns[template strings-/]                                    FAILED           [ 44%]
+tests/test_gui.py::test_xss_patterns[non-quoted attribute escape on load0-/]                FAILED           [ 55%]
+tests/test_gui.py::test_xss_patterns[non-quoted attribute escape on load1-/]                FAILED           [ 66%]
+tests/test_gui.py::test_xss_patterns[non-quoted attribute escape on load with backticks-/]  FAILED           [ 77%]
+tests/test_gui.py::test_xss_patterns[UTF-7 charset meta-/]                                  FAILED           [ 88%]
+tests/test_gui.py::test_xss_patterns[JS-encoded base64, payload is '--SUCCESS[]--'-/]       FAILED           [100%]
+
+==================================================================== FAILURES =====================================================================
+...
+========================================================= 9 failed, 27 warnings in 47.10s =========================================================
