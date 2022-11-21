@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="container">
+    <h1>/name</h1>
+    <form action="/name/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Query: {{ query | safe }}</p>
+    <form action="/name/" method="post">
+        <label for="unsecure_your_name">unsecure your name:</label>
+        <input type="text" name="unsecure_your_name" maxlength="100" required="" id="unsecure_your_name" value = "{{initial}}">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    //sitescripts
+</script>
+{% endblock %}

@@ -1,0 +1,1 @@
+start cmd /k "py -m venv _venv && cd _venv/ && cd Scripts/ && activate && cd .. && cd .. && py -m pip install --upgrade pip &&  pip install -r requirements.txt && cd django && django-admin startproject mysite"

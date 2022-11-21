@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="container">
+    <h1>/index</h1>
+    {% if employees_list %}
+    <ul>
+    {% for employee in employees_list %}
+        <li>{{ employee |safe }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No employees are available.</p>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    //sitescripts
+</script>
+{% endblock %}
